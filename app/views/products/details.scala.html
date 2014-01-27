@@ -1,4 +1,4 @@
-@( product : model.Product )(implicit lang : Lang)
+@( product : model.Product )(implicit flash: Flash, lang: Lang)
 
 @main(Messages("product.details", product.name)){
     <h2>

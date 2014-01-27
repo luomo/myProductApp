@@ -3,4 +3,14 @@ application.name=Catalogo de produtos
 ean = EAN
 name = Nome
 description = Descrição
-products.details = Producto: {0}
+
+products.list.navigation=Produtos
+
+products.details = Produto\: {0}
+products.form=Detalhes
+products.new=(Novo)
+products.new.command=Novo
+products.new.submit=Adicionar
+products.new.success=Producto {0} adicionado com sucesso
+validation.errors=Por favor corrija os erros no formul\u00E1rio
+validation.ean.duplicate=Um produto com este EAN j\u00E1 existe

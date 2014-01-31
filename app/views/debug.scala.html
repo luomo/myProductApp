@@ -1,7 +1,9 @@
 @()(implicit flash: Flash, lang: Lang)
 @import play.api.Play.current
 <footer>
+    Revision @current.configuration.getString("application.revision")
     <b>lang</b> = @lang.code,
     <b>user</b> = @current.configuration.getString("environment.user"),
     <b>date</b> = @(new java.util.Date().format("yyyy-MM-dd HH:mm"))
+
 </footer>

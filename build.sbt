@@ -13,15 +13,15 @@ resolvers += "Local ivy rep" at "file:///usr/local/Cellar/play/2.2.1/libexec/rep
 libraryDependencies ++= Seq(
   jdbc,
   anorm,
-  cache
-)     
-
-libraryDependencies ++= Seq(
+  cache,
+  "postgresql" % "postgresql" % "9.1-901.jdbc4",
   "net.sf.barcode4j" % "barcode4j" % "2.0" ,
   "org.scalautils" % "scalautils_2.10" % "2.0",
   "org.apache.derby" % "derby" % "10.4.1.3",
   "javax.xml.bind" % "jaxb-api" % "2.2.2"
 )
+
+libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.27"
 
 play.Project.playScalaSettings
 

@@ -6,6 +6,8 @@ import play.api.data.Form
 import play.api.data.Forms.{mapping, longNumber, nonEmptyText}
 import play.api.i18n.Messages
 import play.api.data.validation.{Invalid, Valid, ValidationError, Constraint}
+import play.api.Logger
+import play.api.Play.current
 
 /**
  * User: joao.cunha
@@ -14,9 +16,12 @@ object Products extends Controller{
 
   def list = Action {
     implicit request =>
+      log(current.configuration.getString("logger.root"))
       val products = Product.findAll
       Ok(views.html.products.list(products))
   }
+
+  def log(toLog : Object ) = Logger.info(toLog.toString)
 
   def show(ean: Long) = Action { implicit request =>
     Product.findByEan(ean).map { product =>

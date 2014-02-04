@@ -55,6 +55,7 @@ object Products extends Controller{
 
  private val productForm: Form[model.Product] = Form(
     mapping(
+      "id" -> longNumber,
       "ean" -> longNumber.verifying("validation.ean.duplicate", Product.findByEan(_).isEmpty),
       "name" -> nonEmptyText,
       "description" -> nonEmptyText
